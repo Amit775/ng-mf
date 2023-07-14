@@ -1,0 +1,18 @@
+{
+  "hosting": [
+	{
+		"target": "platform",
+		"public": "dist/apps/platform",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"rewrites": [{ "source": "**", "destination": "/index.html"}],
+		"headers": [{ "source": "**", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]}]
+	},
+	{
+		"target": "search",
+		"public": "dist/apps/search",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"rewrites": [{ "source": "**", "destination": "/index.html"}],
+		"headers": [{ "source": "**", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]}]
+	}
+  ]
+}

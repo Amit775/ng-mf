@@ -24,6 +24,10 @@
       },
       "configurations": {
         "production": {
+			"fileReplacements": [{
+				"replace": "apps/platform/src/manifest/module-federation.manifest.ts",
+				"with": "apps/platform/src/manifest/module-federation.manifest.prod.ts"
+			}],
           "budgets": [
             {
               "type": "initial",

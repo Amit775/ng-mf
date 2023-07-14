@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "default": "ng-mf-5527e"
+  },
+  "targets": {
+	"ng-mf-5527e": {
+		"hosting": {
+			"platform": ["ng-mf-platform"],
+			"search": ["ng-mf-search"]
+		}
+	}
+  }
+}

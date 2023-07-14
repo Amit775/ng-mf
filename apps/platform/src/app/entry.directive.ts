@@ -1,6 +1,5 @@
 import {
   Directive,
-  Injector,
   Input,
   OnInit,
   ViewContainerRef,

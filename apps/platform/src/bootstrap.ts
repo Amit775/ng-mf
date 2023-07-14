@@ -2,15 +2,16 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { ApplicationRef } from '@angular/core';
-import { StoreService } from '@ng-mf/shared/store';
+import { PanelService, StoreService } from '@ng-mf/shared/store';
 
 bootstrapApplication(AppComponent, appConfig)
 .then((appRef: ApplicationRef) => {
 	const injector = appRef.injector;
-	const commonServices: Record<string, unknown> = {
-		store: injector.get(StoreService)
+	const services: Record<string, unknown> = {
+		store: injector.get(StoreService),
+		panel: injector.get(PanelService)
 	};
 
-	(window as any).atlas = { commonServices };
+	(window as any).atlas = { services };
 })
 .catch((err) =>  console.error(err));

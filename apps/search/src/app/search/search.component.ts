@@ -7,8 +7,9 @@ import {
   Output,
   inject,
 } from '@angular/core';
-import { StoreService } from '@ng-mf/shared/store';
-import { AMIT } from '../token';
+import { PanelService, StoreService } from '@ng-mf/shared/store';
+import { PANEL_SERVICE, STORE_SERVICE } from '../token';
+import { ModalComponent } from './model.component';
 
 @Component({
   selector: 'ng-mf-search',
@@ -21,11 +22,16 @@ import { AMIT } from '../token';
 export class SearchComponent {
   @Input() text?: string;
   @Output() check = new EventEmitter<string>();
-  service: StoreService = inject(AMIT);
+  storeService: StoreService = inject(STORE_SERVICE);
+  panelService: PanelService = inject(PANEL_SERVICE);
 
-  data$ = this.service.select(s => s.data);
+  data$ = this.storeService.select(s => s.data);
 
   click(): void {
+	const modal = this.panelService.createComponentPortal(ModalComponent);
+	this.panelService.openPanel('panel', modal, {
+		width: 500, height: 500
+	});
     this.check.emit('bublil');
   }
 }

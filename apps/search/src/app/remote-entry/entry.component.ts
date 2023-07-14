@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { StoreService } from '@ng-mf/shared/store';
 import { SearchComponent } from '../search/search.component';
-import { AMIT } from '../token';
+import { STORE_SERVICE } from '../token';
 
 @Component({
   standalone: true,
